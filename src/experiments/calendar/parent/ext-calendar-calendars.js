@@ -217,9 +217,12 @@ this.calendar_calendars = class extends ExtensionAPI {
                   }
                 },
               };
-              offlineStorage
+              const result = offlineStorage
                 .QueryInterface(Ci.calICalendarProvider)
                 .deleteCalendar(offlineStorage, listener);
+              if (typeof result?.then == "function") {
+                result.then(resolve, reject);
+              }
             });
 
             calendar.wrappedJSObject.mObservers.notify("onLoad", [calendar]);

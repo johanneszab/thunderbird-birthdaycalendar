@@ -266,6 +266,7 @@ this.calendar_calendars = class extends ExtensionAPI {
                 },
                 onCalendarUnregistering() {},
                 onCalendarDeleting() {},
+                onCalendarOrderChanged() {},
               };
 
               cal.manager.addObserver(observer);
@@ -322,6 +323,7 @@ this.calendar_calendars = class extends ExtensionAPI {
                   fire.sync(calendar.id);
                 },
                 onCalendarDeleting() {},
+                onCalendarOrderChanged() {},
               };
 
               cal.manager.addObserver(observer);
